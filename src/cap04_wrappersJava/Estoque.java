@@ -1,0 +1,14 @@
+package cap04_wrappersJava;
+
+public class Estoque {
+	Produto[] produtos;
+
+	void listarProdutos() {
+		System.out.println("Produtos em estoque");
+		System.out.println("------------------------");
+
+		for (int i = 0; i < produtos.length; i++) {
+			produtos[i].descrever();
+		}
+	}
+}

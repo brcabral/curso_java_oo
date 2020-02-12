@@ -1,0 +1,19 @@
+package cap07_detalhes_frameworks.curso.fjoo.xml;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
+
+public class LendoProduto {
+	public static void main(String[] args) throws FileNotFoundException {
+		XStream xstream = new XStream(new DomDriver());
+		xstream.alias("produto", Produto.class);
+
+		Produto p = (Produto) xstream.fromXML(new FileInputStream("./xml/produto1.xml"));
+		System.out.println(p.getCodigo());
+		System.out.println(p.getDescricao());
+		System.out.println(p.getValor());
+	}
+}
